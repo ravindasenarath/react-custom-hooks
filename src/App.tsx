@@ -4,17 +4,13 @@ import './App.css';
 import { useToggle } from './useToggle';
 
 const App = () => {
-  const [toggled, setToggled] = useState(false);
-
-  const handleOnClick = () => {
-    setToggled(toggled => !toggled);
-  }
+  const {toggle, toggler} = useToggle();
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={handleOnClick}>{toggled ? 'Toggled' : 'Click to Toggle'}</button>
+        <button onClick={toggler}>{toggle ? 'Toggled' : 'Click to Toggle'}</button>
       </header>
     </div>
   );
